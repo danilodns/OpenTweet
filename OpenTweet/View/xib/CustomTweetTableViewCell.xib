@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CustomTweetTableViewCell" customModule="OpenTweet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDS-sp-gyY">
+                        <rect key="frame" x="50" y="10" width="34.666666666666657" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="TNl-fz-KX7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eEU-st-4ge">
+                        <rect key="frame" x="5" y="10" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="eEU-st-4ge" secondAttribute="height" multiplier="1:1" id="5V9-b9-3eG"/>
+                            <constraint firstAttribute="width" constant="35" id="K7O-Eu-AdI"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfP-4e-ZmM">
+                        <rect key="frame" x="50" y="30" width="260" height="45"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-Bz-az9">
+                        <rect key="frame" x="267.66666666666669" y="10" width="37.333333333333314" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MDS-sp-gyY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="29T-d1-Js8"/>
+                    <constraint firstItem="WR9-Bz-az9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3ta-LG-Y4f"/>
+                    <constraint firstAttribute="trailing" secondItem="IfP-4e-ZmM" secondAttribute="trailing" constant="10" id="83v-dA-lW9"/>
+                    <constraint firstItem="WR9-Bz-az9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MDS-sp-gyY" secondAttribute="trailing" constant="10" id="CdZ-iy-OWP"/>
+                    <constraint firstItem="IfP-4e-ZmM" firstAttribute="top" secondItem="WR9-Bz-az9" secondAttribute="bottom" id="Ect-U2-xbP"/>
+                    <constraint firstItem="IfP-4e-ZmM" firstAttribute="leading" secondItem="eEU-st-4ge" secondAttribute="trailing" constant="10" id="cUT-xM-dv8"/>
+                    <constraint firstAttribute="trailing" secondItem="WR9-Bz-az9" secondAttribute="trailing" constant="15" id="n5Q-JW-Smz"/>
+                    <constraint firstAttribute="bottom" secondItem="IfP-4e-ZmM" secondAttribute="bottom" constant="5" id="nU3-5k-HSr"/>
+                    <constraint firstItem="eEU-st-4ge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="nfq-3J-LLG"/>
+                    <constraint firstItem="eEU-st-4ge" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pcg-WE-0Sg"/>
+                    <constraint firstItem="MDS-sp-gyY" firstAttribute="leading" secondItem="eEU-st-4ge" secondAttribute="trailing" constant="10" id="unu-93-fvw"/>
+                    <constraint firstItem="IfP-4e-ZmM" firstAttribute="top" secondItem="MDS-sp-gyY" secondAttribute="bottom" id="xuc-aE-qY8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration" identifier="CustomTweetTableCell"/>
+            <connections>
+                <outlet property="avatarImageView" destination="eEU-st-4ge" id="phs-1k-1G5"/>
+                <outlet property="bottomTweetConstraint" destination="nU3-5k-HSr" id="AgX-pR-Ep4"/>
+                <outlet property="dateLabel" destination="WR9-Bz-az9" id="yqF-AF-QGo"/>
+                <outlet property="tweetContentTextview" destination="IfP-4e-ZmM" id="9AI-kE-OzQ"/>
+                <outlet property="usernameLabel" destination="MDS-sp-gyY" id="xKN-hK-ERF"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
