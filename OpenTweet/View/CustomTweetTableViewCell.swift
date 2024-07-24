@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CustomTweetTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -19,10 +20,17 @@ class CustomTweetTableViewCell: UITableViewCell {
         super.awakeFromNib()
         tweetContentTextview.textContainerInset = .zero
     }
+    
+    override func prepareForReuse() {
+        self.avatarImageView.sd_cancelCurrentImageLoad()
+    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    func configure(tweet: Tweet) {
+        usernameLabel.text = tweet.author
+        dateLabel.text = tweet.date.toString()
+        tweetContentTextview.isUserInteractionEnabled = true
+        avatarImageView.sd_setImage(with: URL(string: tweet.avatar ?? ""), placeholderImage: UIImage(systemName: "person"))
+        tweetContentTextview.text = tweet.content
     }
     
 }

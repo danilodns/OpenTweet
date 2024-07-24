@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		F79978A62C5172010059C33E /* TimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79978A52C5172010059C33E /* TimeLineViewModel.swift */; };
 		F79978AA2C5172A20059C33E /* CustomTweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79978A92C5172A20059C33E /* CustomTweetTableViewCell.xib */; };
 		F79978AC2C5173270059C33E /* CustomTweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79978AB2C5173270059C33E /* CustomTweetTableViewCell.swift */; };
+		F79978AF2C5175940059C33E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F79978AE2C5175940059C33E /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79978AF2C5175940059C33E /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +119,6 @@
 				F799789E2C516EE60059C33E /* Extensions */,
 				F799789B2C516E950059C33E /* Model */,
 				009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */,
-				009C4C6D1D9F0CD600F0BC6C /* TimelineViewController.swift */,
 				009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */,
 				009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */,
 				009C4C721D9F0CD600F0BC6C /* Assets.xcassets */,
@@ -181,6 +182,7 @@
 			children = (
 				F79978A82C5172690059C33E /* xib */,
 				F79978AB2C5173270059C33E /* CustomTweetTableViewCell.swift */,
+				009C4C6D1D9F0CD600F0BC6C /* TimelineViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +211,9 @@
 			dependencies = (
 			);
 			name = OpenTweet;
+			packageProductDependencies = (
+				F79978AE2C5175940059C33E /* SDWebImage */,
+			);
 			productName = OpenTweet;
 			productReference = 009C4C681D9F0CD600F0BC6C /* OpenTweet.app */;
 			productType = "com.apple.product-type.application";
@@ -261,8 +266,6 @@
 				TargetAttributes = {
 					009C4C671D9F0CD600F0BC6C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 98ZCKDZUZF;
-						ProvisioningStyle = Automatic;
 					};
 					009C4C7B1D9F0CD600F0BC6C = {
 						CreatedOnToolsVersion = 8.0;
@@ -287,6 +290,9 @@
 				Base,
 			);
 			mainGroup = 009C4C5F1D9F0CD600F0BC6C;
+			packageReferences = (
+				F79978AD2C5175940059C33E /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 009C4C691D9F0CD600F0BC6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -501,7 +507,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -516,7 +523,10 @@
 				DEVELOPMENT_TEAM = 98ZCKDZUZF;
 				INFOPLIST_FILE = OpenTweet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danilo.opentable.OpenTweet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -533,7 +543,10 @@
 				DEVELOPMENT_TEAM = 98ZCKDZUZF;
 				INFOPLIST_FILE = OpenTweet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danilo.opentable.OpenTweet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -549,7 +562,11 @@
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenTweetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -565,7 +582,11 @@
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenTweetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -580,7 +601,11 @@
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenTweetUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -595,7 +620,11 @@
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenTweetUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -643,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F79978AD2C5175940059C33E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F79978AE2C5175940059C33E /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F79978AD2C5175940059C33E /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 009C4C601D9F0CD600F0BC6C /* Project object */;
 }
