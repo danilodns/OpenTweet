@@ -10,14 +10,14 @@ import UIKit
 import SDWebImage
 
 class TimelineViewController: UIViewController {
-
-    let timelineViewModel = TimeLineViewModel()
+    
+    var timelineViewModel = TimeLineViewModel()
     let cellReuseIdentifier = "CustomTweetTableCell"
     let cellNibName = "CustomTweetTableViewCell"
     var selectedRow: Int?
     var myTableTimeLine = UITableView()
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Change the tableview size to fit the screen, add to the view and register the cell for reuse
         myTableTimeLine.frame = CGRect(x: 10, y: 10, width: view.frame.width, height: view.frame.height)
@@ -29,10 +29,18 @@ class TimelineViewController: UIViewController {
         timelineViewModel.setProtocol(timelineProtocol: self)
         myTableTimeLine.delegate = self
         myTableTimeLine.dataSource = self
-               
+        
         timelineViewModel.fetchTimelineFromJson()
-	}
-
+    }
+    
+    func goToTweetDetail(tweetList: [Tweet]) {
+        let nextViewController = TimelineViewController()
+        nextViewController.timelineViewModel = TimeLineViewModel(timelineTweets: tweetList)
+        if let nav = navigationController {
+            nav.pushViewController(nextViewController, animated: true)
+        }
+    }
+    
 }
 
 extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
@@ -42,9 +50,14 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
         if let selectedRow = selectedRow {
             updateIndex.append(IndexPath(row: selectedRow, section: 0))
         }
+        let isAlreadSelected = indexPath.row == selectedRow
         selectedRow = indexPath.row
         updateIndex.append(indexPath)
         tableView.reloadRows(at: updateIndex, with: .automatic)
+        //check if the view is the main and check if the tweet is highlight
+        if navigationController?.viewControllers.first == self && isAlreadSelected {
+            goToTweetDetail(tweetList: timelineViewModel.getTweetThread(for: indexPath.row))
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

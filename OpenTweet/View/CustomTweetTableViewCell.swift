@@ -30,7 +30,7 @@ class CustomTweetTableViewCell: UITableViewCell {
     func configure(tweet: Tweet, isSelected: Bool = false) {
         usernameLabel.text = tweet.author
         dateLabel.text = tweet.date.toString()
-        tweetContentTextview.isUserInteractionEnabled = true
+        tweetContentTextview.isUserInteractionEnabled = isSelected
         //loading using SDWebImage to cache the image after the download
         avatarImageView.sd_setImage(with: URL(string: tweet.avatar ?? ""), placeholderImage: UIImage(systemName: "person"))
         //Highlight the mentions (@username)
