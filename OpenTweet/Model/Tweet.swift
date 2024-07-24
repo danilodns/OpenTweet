@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Tweet: Codable {
+    var id: String
+    var author: String
+    var content: String
+    var date: Date
+    var avatar: String?
+    var inReplyTo: String?
+}
