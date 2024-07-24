@@ -36,7 +36,17 @@ class TimelineViewController: UIViewController {
 }
 
 extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // updating only the row selected and the previews one in order to change the layout
+        var updateIndex: [IndexPath] = []
+        if let selectedRow = selectedRow {
+            updateIndex.append(IndexPath(row: selectedRow, section: 0))
+        }
+        selectedRow = indexPath.row
+        updateIndex.append(indexPath)
+        tableView.reloadRows(at: updateIndex, with: .automatic)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         timelineViewModel.getTimeLineTweetCounts()
     }
@@ -46,7 +56,7 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "CustomTweetTableCell")
         }
         let tweet = timelineViewModel.getTweet(for: indexPath.row)
-        cell.configure(tweet: tweet)
+        cell.configure(tweet: tweet, isSelected: selectedRow == indexPath.row)
         return cell
     }
     
