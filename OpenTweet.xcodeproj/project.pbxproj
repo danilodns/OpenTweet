@@ -17,6 +17,7 @@
 		009C4C9B1D9F0D4100F0BC6C /* timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C9A1D9F0D4100F0BC6C /* timeline.json */; };
 		F799789D2C516EB50059C33E /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799789C2C516EB50059C33E /* Tweet.swift */; };
 		F79978A02C516F030059C33E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799789F2C516F030059C33E /* DateExtension.swift */; };
+		F79978A62C5172010059C33E /* TimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79978A52C5172010059C33E /* TimeLineViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		009C4C9D1D9F104800F0BC6C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F799789C2C516EB50059C33E /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		F799789F2C516F030059C33E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		F79978A52C5172010059C33E /* TimeLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		009C4C6A1D9F0CD600F0BC6C /* OpenTweet */ = {
 			isa = PBXGroup;
 			children = (
+				F79978A42C5171EC0059C33E /* ViewModel */,
 				F799789E2C516EE60059C33E /* Extensions */,
 				F799789B2C516E950059C33E /* Model */,
 				009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */,
@@ -158,6 +161,14 @@
 				F799789F2C516F030059C33E /* DateExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F79978A42C5171EC0059C33E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F79978A52C5172010059C33E /* TimeLineViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			files = (
 				F799789D2C516EB50059C33E /* Tweet.swift in Sources */,
 				F79978A02C516F030059C33E /* DateExtension.swift in Sources */,
+				F79978A62C5172010059C33E /* TimeLineViewModel.swift in Sources */,
 				009C4C6E1D9F0CD600F0BC6C /* TimelineViewController.swift in Sources */,
 				009C4C6C1D9F0CD600F0BC6C /* AppDelegate.swift in Sources */,
 			);
